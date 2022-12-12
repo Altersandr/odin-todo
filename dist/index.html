@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ODIN To-Do's</title>
+    <link rel="stylesheet" href="../src/styles/styles.css">
+    <script src="../src/scripts/tasks.js" type="module"></script>
+</head>
+<body>
+    <div id="header">
+        <img src="../src/img/jigda0.svg" alt="logo" height="140px">
+        <h1 id="project-title">ODIN To-Do's</h1>
+    </div>
+    <div id="main-body">
+        <div id="sidebar">
+            <ul class="navlist">
+                <li class="home">Home</li>
+                <li class ="today">Today</li>
+                <li class="week">Week</li>
+            </ul>
+                
+            <div class="all-projects">
+                    <h2>My projects</h2>
+                    <ul class="projects" data-projects></ul>
+                    <form action="" data-new-project-form>
+                        <input 
+                          type="text"
+                          class="new project"
+                          data-new-project-input
+                          placeholder="new project name"
+                          aria-label="new project name"
+                        />
+                        <button class="bttn create" aria-label="create new project">+</button>
+                        <button class="bttn delete" data-delete-project-btn>-</button>
+                      </form>
+                    <!-- <button id="addproject">+ Add Project</button> -->
+                    
+            </div>
+
+        </div>
+        <div id="content" data-task-display-container>
+            <div class="task-header">
+                <h2 class="task-title" data-task-title>Home</h2>
+                <p class="task-count" data-task-count>0 tasks remaining</p>
+            </div>
+            <div class="task-body" data-tasks></div>
+         
+            <button class="btn btn-open">New To-Do</button>
+            
+        </div>
+
+            <!-- Modal -->
+            <section class="modal hidden">
+                <div class="flex">
+                    <img src="../src/img/pencil.svg" width="30px" height="30px" alt="pencil"/>
+                    <h3>Add a new To-Do</h3>
+                    <button class="btn-close">⨉</button>
+                  </div>
+
+                  <input type="text" name="title" id="title" placeholder="Title">
+                  <input type="text" name="description " id="description" placeholder="Description">
+                  <label for="date">Due Date</label>
+                  <input type="date" name="date" id="date">
+                  <div id="priority">
+                    <span>Priority</span>
+                    <div class="radio-buttons">
+                    <input type="radio" name="priority" id="lowp">
+                    <input type="radio" name="priority" id="mediump">
+                    <input type="radio" name="priority" id="highp">
+                </div>
+                  </div>
+                   
+                
+                  <textarea name="notes" id="notes" cols="10" rows="4" placeholder="Notes"></textarea>
+                  <button class="btn" id="addToDoBtn">Submit</button>
+            </section>
+
+
+
+            
+            <div class="overlay hidden"></div>
+        
+    </div>
+    <footer id="footer">
+        <div id = 'author'>Copyright © 2022 Altersandr</div>
+        <a href="https://github.com/Altersandr">
+            <img src= "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt = 'Altersandr' width="30px" class="github">
+        </a>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
