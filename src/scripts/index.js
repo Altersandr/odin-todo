@@ -1,5 +1,5 @@
 import { tasks } from "./tasks";
-
+import { renderTasks } from "./tasks";
 
 
 const modal = document.querySelector(".modal");
@@ -33,34 +33,34 @@ const taskTitleElement = document.querySelector('[data-task-title]')
 const taskCountElement = document.querySelector('[data-task-count]')
 const tasksContainer = document.querySelector('[data-tasks]')
 
-
 const LOCAL_STORAGE_PROJECT_KEY = 'task.projects';
 const LOCAL_STORAGE_SELECTED_PROJECT_ID_KEY ='task.selectedProjectId';
 
-const LOCAL_STORAGE_TASKS_KEY = 'tasks.list';
-
 let projects = JSON.parse(localStorage.getItem(LOCAL_STORAGE_PROJECT_KEY))||[];
-
-// let tasks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_TASKS_KEY))||[];
 
 let selectedProjectId = localStorage.getItem(LOCAL_STORAGE_SELECTED_PROJECT_ID_KEY)
 
-
-// console.log(projects)
 projectsContainer.addEventListener('click', e=>{
   if(e.target.tagName.toLowerCase()==='li'){
     selectedProjectId = e.target.dataset.projectId
     saveProjects()
     renderProjects()
+    renderTasks()
   }
 })
 
+
 deleteProjectBtn.addEventListener('click', e=>{
   projects = projects.filter(project => project.id !== selectedProjectId)
+  let filteredTasks = tasks
+  filteredTasks = filteredTasks.filter(task => task.id === selectedProjectId)
   selectedProjectId = null;
   saveProjects()
   renderProjects()
+  renderTasks()
 })
+
+console.log(tasks)
 
 newProjectForm.addEventListener('submit', e=>{
   e.preventDefault();
@@ -71,6 +71,7 @@ newProjectForm.addEventListener('submit', e=>{
   projects.push(project);
   saveProjects()
   renderProjects()
+  renderTasks()
 })
 
 function createProject (name){
@@ -81,7 +82,7 @@ function createProject (name){
 function saveProjects(){
   localStorage.setItem(LOCAL_STORAGE_PROJECT_KEY, JSON.stringify(projects))
   localStorage.setItem(LOCAL_STORAGE_SELECTED_PROJECT_ID_KEY, selectedProjectId)
-  // localStorage.setItem(LOCAL_STORAGE_TASKS_KEY, JSON.stringify(tasks))
+  // localStorage.setItem(LOCAL_STORAGE_TASKS_KEY, JSON.stringify(taskList))
 }
 
 
