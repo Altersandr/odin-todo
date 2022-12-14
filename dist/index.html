@@ -26,14 +26,14 @@
                     <ul class="projects" data-projects></ul>
                     <form action="" data-new-project-form>
                         <input 
-                          type="text"
+                          type="text" required
                           class="new project"
                           data-new-project-input
                           placeholder="new project name"
                           aria-label="new project name"
                         />
-                        <button class="bttn create" aria-label="create new project">+</button>
-                        <button class="bttn delete" data-delete-project-btn>-</button>
+                        <button class="bttn create" aria-label="create new project">Add new</button>
+                        <button class="bttn delete" data-delete-project-btn>Delete selected</button>
                       </form>
                     <!-- <button id="addproject">+ Add Project</button> -->
                     
@@ -43,11 +43,10 @@
         <div id="content" data-task-display-container>
             <div class="task-header">
                 <h2 class="task-title" data-task-title>Home</h2>
-                <p class="task-count" data-task-count>0 tasks remaining</p>
             </div>
             <div class="task-body" data-tasks></div>
          
-            <button class="btn btn-open">New To-Do</button>
+            <button class="btn btn-open">New task</button>
             
         </div>
 
@@ -55,11 +54,11 @@
             <section class="modal hidden">
                 <div class="flex">
                     <img src="../src/img/pencil.svg" width="30px" height="30px" alt="pencil"/>
-                    <h3>Add a new To-Do</h3>
+                    <h3>Add a new Task</h3>
                     <button class="btn-close">⨉</button>
                   </div>
 
-                  <input type="text" name="title" id="title" placeholder="Title">
+                  <input type="text" name="title" id="title" placeholder="Title"  required>
                   <input type="text" name="description " id="description" placeholder="Description">
                   <label for="date">Due Date</label>
                   <input type="date" name="date" id="date">
@@ -76,6 +75,54 @@
                   <textarea name="notes" id="notes" cols="10" rows="4" placeholder="Notes"></textarea>
                   <button class="btn" id="addToDoBtn">Submit</button>
             </section>
+
+            <section class="task-details hidden">
+                <div class="task-details-title"></div>
+                <div class="task-details-description"></div>
+                <div class="task-details-duedate"></div>
+                <div class="task-details-priority"></div>
+                <div class="task-details-notes"></div>
+            </section>
+
+
+
+
+
+
+<!-- 
+            <section class="detail modal hidden">
+                <div class="flex">
+                    <img src="../src/img/pencil.svg" width="30px" height="30px" alt="pencil"/>
+                    <h3>Edit the task</h3>
+                    <button class="btn-close">⨉</button>
+                  </div>
+
+                  <input type="text" name="title" id="title" placeholder="Title"  required>
+                  <input type="text" name="description " id="description" placeholder="Description">
+                  <label for="date">Due Date</label>
+                  <input type="date" name="date" id="date">
+                  <div id="priority">
+                    <span>Priority</span>
+                    <div class="radio-buttons">
+                    <input type="radio" name="priority" id="lowp">
+                    <input type="radio" name="priority" id="mediump">
+                    <input type="radio" name="priority" id="highp">
+                </div>
+                  </div>
+                   
+                
+                  <textarea name="notes" id="notes" cols="10" rows="4" placeholder="Notes"></textarea>
+                  <button class="btn" id="addToDoBtn">Submit</button>
+            </section> -->
+
+
+
+
+
+
+
+
+
 
 
 

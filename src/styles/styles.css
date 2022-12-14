@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap');
 
+
+:root{
+  --dark: #191919;
+  --blue: #2D4263;
+  --orange: #C84B31;
+  --bland: #ECDBBA;
+}
+
+
+*{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 html,
 body{
     margin: 0;
@@ -10,24 +23,56 @@ body{
     position: relative;
 }
 
-/* #addproject{
-    font-size: 16px;
-    border: none;
-    font-family: inherit;
-} */
+form{
+  padding-left: 20px;
+}
+
+.tasks{
+  position: relative;
+}
+
+#controls{
+ display: grid;
+ /* justify-items: center; */
+ grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.tasks.checked:after{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 1px;
+  background: var(--dark);
+  
+  content: "";
+  width: 100%;
+  display: block;
+}
+
+.tasks.checked{
+  opacity: .3;
+  transition: 500ms ease
+}
 
 .active-project{
-  background-color: gray;
+  background-color: var(--blue);
 }
 
 .projects li:hover{
+  width: fit-content;
   cursor: pointer;
   transition: 900ms ease;
   background-color: gray;
 }
 
+.projects li{
+  border-radius: 5px;
+  width: fit-content;
+ margin: .5rem;
+}
 #header{
-    background-color: blanchedalmond;
+    background-color: var(--bland);
     height: 15%;
     display: grid;
     grid-template-columns: 250px 1fr;
@@ -39,7 +84,7 @@ body{
 }
 
 #project-title{
-    color: rgb(54, 54, 54);
+    color: var(--da);
     text-align: start;
     font-size: 50px;
     letter-spacing: .25em;
@@ -47,14 +92,16 @@ body{
 }
 
 #main-body{
+    color: var(--bland);
     display: flex;
     height: 80%;
-    background-color: aliceblue;
+    background-color: var(--blue);
 }
 
 #sidebar{
+    box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.75);
     width: 250px;
-    background-color: rgb(174, 253, 253);
+    background-color: var(--orange);
 }
 
 ul, li{
@@ -71,12 +118,27 @@ h2{
 }
 
 #footer{
+  color: var(--bland);
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
     height: 5%;
-    background-color: gray;
+    background-color: rgb(95, 94, 94);
 }
 
 
+.tasks.mediump{
+  background-color: orange;
+}
+
+.tasks.lowp{
+  background-color: rgb(12, 219, 91);
+}
+
+.tasks.highp{
+  background-color: rgb(255, 0, 0);
+}
 
 #content{
   display: flex;
@@ -85,19 +147,22 @@ h2{
 }
 
 .tasks{
-    height: 35px;
+  color: var(--dark);
+    min-height: 35px;
     margin-bottom: 5px;
     border-radius: 30px;
     width: 50vw;
     font-size: 18px;
     background-color: rgb(66, 255, 255);
-    display: flex;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 60px 1fr 100px 160px;
     align-items: center;
-    justify-content: space-around;
 }
 
-
+.deleteTask:hover{
+  opacity: .5;
+  cursor: pointer;
+}
 
 
 /* modal */
@@ -112,7 +177,8 @@ h2{
     min-height: 350px;
     position: absolute;
     top: 20%;
-    background-color: white;
+    left: 40%;
+    background-color: var(--blue);
     border: 1px solid #ddd;
     border-radius: 15px;
   }
@@ -125,7 +191,7 @@ h2{
   
   .modal input {
     padding: 0.7rem 1rem;
-    border: 1px solid #ddd;
+    border: 1px solid rgb(173, 173, 173);
     border-radius: 5px;
     font-size: 0.9em;
   }
@@ -202,17 +268,41 @@ h2{
     place-content: center;
   }
   
-  input[type="radio"]::before {
+  #mediump::before {
     content: "";
     width: .65em;
     height: .65em;
     border-radius: 50%;
     transform: scale(0);
     transition: 150ms transform ease-in-out;
-    box-shadow: inset 1em 1em rebeccapurple;
+    box-shadow: inset 1em 1em orange;
+  }
+
+
+
+  #lowp::before {
+    content: "";
+    width: .65em;
+    height: .65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 150ms transform ease-in-out;
+    box-shadow: inset 1em 1em rgb(12, 219, 91);
+  }
+
+  #highp::before {
+    content: "";
+    width: .65em;
+    height: .65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 150ms transform ease-in-out;
+    box-shadow: inset 1em 1em rgb(255, 0, 0);
   }
   
-  input[type="radio"]:checked::before {
+  #mediump:checked::before,
+  #lowp:checked::before,
+  #highp:checked::before{
     transform: scale(2);
   }
 
@@ -236,14 +326,25 @@ h2{
   border-radius: 5px;
 }
 
-.bttn.create {
- 
-  font-size: 1.5rem;
+.bttn {
+  background-color: var(--bland);
+  padding: 5px;
+  border-radius: 25px;
+  margin-top: 10px;
+  margin-right: 10px;
+  font-size: 1rem;
   font-weight: 900;
-  margin-right: 0.25em;
+  
   transition: opacity 250ms ease-in;
 }
 
-.bttn.create:hover {
+.bttn:hover {
   opacity: 0.7;
+}
+
+.home:hover,
+.today:hover,
+.week:hover{
+  color: #2D4263;
+  cursor: pointer;
 }
