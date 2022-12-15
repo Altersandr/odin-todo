@@ -1,6 +1,10 @@
 import { tasks } from "./tasks";
 import { renderTasks } from "./tasks";
 
+import { showTodayTasks} from "./today";
+
+const todayBtn = document.querySelector('.today');
+todayBtn.addEventListener('click', showTodayTasks)
 
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
@@ -17,10 +21,13 @@ openModalBtn.addEventListener("click", openModal);
 const closeModal = function () {
     modal.classList.add("hidden");
     overlay.classList.add("hidden");
+    const taskDetailsContainer = document.querySelector('.task-details');
+    taskDetailsContainer.classList.add('hidden')
   };
 
 closeModalBtn.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
+
 
 
 const projectsContainer = document.querySelector('[data-projects]');
@@ -144,19 +151,6 @@ window.addEventListener('load', e=>{
 })
 
 
-const taskDetailBtn = document.querySelector('.task-details-btn');
-// taskDetailBtn.addEventListener('click', showDetails)
-
-console.log(taskDetailBtn)
-
-// function showDetails(){
-//   const detailsModal = document.querySelector(".task-details");
-//   detailsModal.classList.remove("hidden");
-//   overlay.classList.remove("hidden");
-// }
-
-
-
 renderProjects()
 
 export {closeModal}
@@ -164,23 +158,3 @@ export {closeModal}
 export {selectedProjectId}
 
 export {saveProjects}
-
-
-// const modal = document.querySelector(".modal");
-// const overlay = document.querySelector(".overlay");
-// const openModalBtn = document.querySelector(".btn-open");
-// const closeModalBtn = document.querySelector(".btn-close");
-
-// const openModal = function () {
-//     modal.classList.remove("hidden");
-//     overlay.classList.remove("hidden");
-//   };
-
-// openModalBtn.addEventListener("click", openModal);
-
-// const closeModal = function () {
-//     modal.classList.add("hidden");
-//     overlay.classList.add("hidden");
-//   };
-
-// closeModalBtn.addEventListener("click", closeModal);

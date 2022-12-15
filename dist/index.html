@@ -7,6 +7,8 @@
     <title>ODIN To-Do's</title>
     <link rel="stylesheet" href="../src/styles/styles.css">
     <script src="../src/scripts/tasks.js" type="module"></script>
+    <script src="../src/scripts/taskDetails.js" type="module" defer></script>
+    <script src="../src/scripts/today.js" type="module"></script>
 </head>
 <body>
     <div id="header">
@@ -29,7 +31,7 @@
                           type="text" required
                           class="new project"
                           data-new-project-input
-                          placeholder="new project name"
+                          placeholder="New project name"
                           aria-label="new project name"
                         />
                         <button class="bttn create" aria-label="create new project">Add new</button>
@@ -82,51 +84,10 @@
                 <div class="task-details-duedate"></div>
                 <div class="task-details-priority"></div>
                 <div class="task-details-notes"></div>
+               
             </section>
 
 
-
-
-
-
-<!-- 
-            <section class="detail modal hidden">
-                <div class="flex">
-                    <img src="../src/img/pencil.svg" width="30px" height="30px" alt="pencil"/>
-                    <h3>Edit the task</h3>
-                    <button class="btn-close">⨉</button>
-                  </div>
-
-                  <input type="text" name="title" id="title" placeholder="Title"  required>
-                  <input type="text" name="description " id="description" placeholder="Description">
-                  <label for="date">Due Date</label>
-                  <input type="date" name="date" id="date">
-                  <div id="priority">
-                    <span>Priority</span>
-                    <div class="radio-buttons">
-                    <input type="radio" name="priority" id="lowp">
-                    <input type="radio" name="priority" id="mediump">
-                    <input type="radio" name="priority" id="highp">
-                </div>
-                  </div>
-                   
-                
-                  <textarea name="notes" id="notes" cols="10" rows="4" placeholder="Notes"></textarea>
-                  <button class="btn" id="addToDoBtn">Submit</button>
-            </section> -->
-
-
-
-
-
-
-
-
-
-
-
-
-            
             <div class="overlay hidden"></div>
         
     </div>

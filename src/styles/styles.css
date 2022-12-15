@@ -33,8 +33,7 @@ form{
 
 #controls{
  display: grid;
- /* justify-items: center; */
- grid-template-columns: 1fr 1fr 1fr;
+ grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
 
@@ -159,9 +158,18 @@ h2{
     align-items: center;
 }
 
-.deleteTask:hover{
-  opacity: .5;
+.deleteTask:hover,
+.task-details-btn:hover{
+  scale: 1.1;
+  filter:invert(1);
+  transition: 200ms ease;
   cursor: pointer;
+}
+
+.task-details-btn{
+  text-align: center;
+  border-radius: 10px;
+  background-color: var(--bland);
 }
 
 
@@ -188,6 +196,26 @@ h2{
     align-items: center;
     justify-content: space-between;
   }
+
+  .task-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.4rem;
+    width: 250px;
+    padding: 1.3rem;
+    min-height: 150px;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    background-color: var(--blue);
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    z-index: 4;
+  }
+
+
+
   
   .modal input {
     padding: 0.7rem 1rem;
