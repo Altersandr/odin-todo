@@ -26,11 +26,11 @@ function createTask(){
 
 
 
-export {tasks}
+export { tasks }
 import { closeModal } from "./index";
 import { selectedProjectId } from "./index";
 import { showDetails } from "./taskDetails";
-
+import { today } from "./today";
 const addToDo = function(){
     if(title.value ===""){return}
     const newTask = createTask();
@@ -62,6 +62,9 @@ function deleteTask (e){
 function renderTasks (){
     const mainContainer = document.querySelector('.task-body');
     mainContainer.innerHTML = "";
+    // if(selectedProjectId == "today"){
+    //     tasks = todayTasks()
+    // }
     tasks.forEach(task=>{
         const priority = task.priority
        
@@ -111,8 +114,10 @@ function renderTasks (){
         
      if(task.id === selectedProjectId){
         mainContainer.appendChild(divContainer)
-}else if (selectedProjectId ===null){
+}else if (selectedProjectId =="home" ||selectedProjectId ==null){
   
+    mainContainer.appendChild(divContainer)
+}else if (selectedProjectId =="today" && task.dueDate ==today){
     mainContainer.appendChild(divContainer)
 }
     })

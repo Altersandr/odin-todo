@@ -1,10 +1,6 @@
 import { tasks } from "./tasks";
 import { renderTasks } from "./tasks";
 
-import { showTodayTasks} from "./today";
-
-const todayBtn = document.querySelector('.today');
-todayBtn.addEventListener('click', showTodayTasks)
 
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
@@ -46,21 +42,28 @@ let projects = JSON.parse(localStorage.getItem(LOCAL_STORAGE_PROJECT_KEY))||[];
 
 let selectedProjectId = localStorage.getItem(LOCAL_STORAGE_SELECTED_PROJECT_ID_KEY)
 
-
 navlistContainer.addEventListener('click', e=>{
   if(e.target.tagName.toLowerCase()==='li'){
-    if(e.target.classList = "home"){
-      selectedProjectId = null
+    if(e.target.classList == "home"){
+      selectedProjectId = "home"
       taskTitleElement.innerHTML = "Home";
       saveProjects()
       renderTasks()
-  }else{
+  }else if(e.target.classList == "today"){
+    selectedProjectId = "today"
+    taskTitleElement.innerHTML = "Today";
+    saveProjects()
+    renderTasks()
+  }
+  else{
     selectedProjectId = e.target.dataset.projectId
     saveProjects()
     renderProjects()
   }
   }
+  
 })
+
 
 projectsContainer.addEventListener('click', e=>{
   if(e.target.tagName.toLowerCase()==='li'){
@@ -114,9 +117,8 @@ function renderProjects (){
   
   const selectedProject = projects.find(project =>project.id === selectedProjectId)
   
-    if(selectedProject===undefined){
+    if(selectedProject==undefined){
       return
-    taskTitleElement.innerText = selectedProject.name
     }else{taskTitleElement.innerText = selectedProject.name}
   
   renderTasks()
@@ -149,7 +151,6 @@ window.addEventListener('load', e=>{
       saveProjects()
       renderTasks()
 })
-
 
 renderProjects()
 
