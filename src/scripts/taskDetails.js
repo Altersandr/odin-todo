@@ -1,6 +1,8 @@
 import { tasks } from "./tasks"
 import { closeModal } from "./index";
 
+export {showDetails}
+
 function showDetails(e){
     const taskTitle = e.target.parentNode.parentNode.querySelector('span').innerText;
     tasks.forEach(task => {
@@ -27,5 +29,3 @@ function showDetails(e){
         
     
 }
-
-export {showDetails}

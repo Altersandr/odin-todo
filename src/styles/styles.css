@@ -15,12 +15,12 @@
 
 html,
 body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
 form{
@@ -34,7 +34,7 @@ form{
 #controls{
  display: grid;
  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+ gap: 10px;
 }
 
 .tasks.checked:after{
@@ -68,48 +68,48 @@ form{
 .projects li{
   border-radius: 5px;
   width: fit-content;
- margin: .5rem;
+  margin: .5rem;
 }
 #header{
-    background-color: var(--bland);
-    height: 15%;
-    display: grid;
-    grid-template-columns: 250px 1fr;
+  background-color: var(--bland);
+  height: 15%;
+  display: grid;
+  grid-template-columns: 250px 1fr;
 }
 
 #header img{
-    display: grid;
-    place-self: center;
+  display: grid;
+  place-self: center;
 }
 
 #project-title{
-    color: var(--da);
-    text-align: start;
-    font-size: 50px;
-    letter-spacing: .25em;
-    font-family: 'Rubik Vinyl', cursive;
+  color: var(--dark);
+  text-align: start;
+  font-size: 3rem;
+  letter-spacing: .25em;
+  font-family: 'Rubik Vinyl', cursive;
 }
 
 #main-body{
-    color: var(--bland);
-    display: flex;
-    height: 80%;
-    background-color: var(--blue);
+  color: var(--bland);
+  display: flex;
+  height: 80%;
+  background-color: var(--blue);
 }
 
 #sidebar{
-    box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.75);
-    width: 250px;
-    background-color: var(--orange);
+  box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.75);
+  width: 250px;
+  background-color: var(--orange);
 }
 
 ul, li{
-    list-style: none;
+  list-style: none;
 }
 
 .navlist{
-    font-size: 26px;
-    line-height: 2.3em;
+  font-size: 26px;
+  line-height: 2.3em;
 }
 
 h2{
@@ -118,12 +118,12 @@ h2{
 
 #footer{
   color: var(--bland);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    height: 5%;
-    background-color: rgb(95, 94, 94);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  height: 5%;
+  background-color: rgb(95, 94, 94);
 }
 
 
@@ -142,20 +142,20 @@ h2{
 #content{
   display: flex;
   flex-direction: column;
-    padding: 50px;
+  padding: 50px;
 }
 
 .tasks{
   color: var(--dark);
-    min-height: 35px;
-    margin-bottom: 5px;
-    border-radius: 30px;
-    width: 50vw;
-    font-size: 18px;
-    background-color: rgb(66, 255, 255);
-    display: grid;
-    grid-template-columns: 60px 1fr 100px 160px;
-    align-items: center;
+  min-height: 35px;
+  margin-bottom: 5px;
+  border-radius: 30px;
+  width: 50vw;
+  font-size: 18px;
+  background-color: rgb(66, 255, 255);
+  display: grid;
+  grid-template-columns: 60px 1fr 100px 160px;
+  align-items: center;
 }
 
 .deleteTask:hover,
@@ -176,112 +176,112 @@ h2{
 /* modal */
 
 .modal {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 0.4rem;
-    width: 450px;
-    padding: 1.3rem;
-    min-height: 350px;
-    position: absolute;
-    top: 20%;
-    left: 40%;
-    background-color: var(--blue);
-    border: 1px solid #ddd;
-    border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.4rem;
+  width: 450px;
+  padding: 1.3rem;
+  min-height: 350px;
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  background-color: var(--blue);
+  border: 1px solid #ddd;
+  border-radius: 15px;
   }
   
   .modal .flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   }
 
   .task-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 0.4rem;
-    width: 250px;
-    padding: 1.3rem;
-    min-height: 150px;
-    position: absolute;
-    top: 40%;
-    left: 40%;
-    background-color: var(--blue);
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.4rem;
+  width: 250px;
+  padding: 1.3rem;
+  min-height: 150px;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  background-color: var(--blue);
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  z-index: 4;
   }
 
 
 
   
   .modal input {
-    padding: 0.7rem 1rem;
-    border: 1px solid rgb(173, 173, 173);
-    border-radius: 5px;
-    font-size: 0.9em;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgb(173, 173, 173);
+  border-radius: 5px;
+  font-size: 0.9em;
   }
   
   .modal p {
-    font-size: 0.9rem;
-    color: #777;
-    margin: 0.4rem 0 0.2rem;
+  font-size: 0.9rem;
+  color: #777;
+  margin: 0.4rem 0 0.2rem;
   }
   
   button {
-    cursor: pointer;
-    border: none;
-    font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
   }
   
   .btn {
-    display: inline-block;
-    padding: 0.8rem 1.4rem;
-    font-weight: 700;
-    background-color: black;
-    color: white;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 1em;
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  font-weight: 700;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1em;
   }
   
   .btn-open {
-    position: absolute;
-    bottom: 150px;
+  position: absolute;
+  bottom: 150px;
   }
   
   .btn-close {
-    padding: 0.5rem 0.8rem;
-    background: #eee;
-    border-radius: 50%;
+  padding: 0.5rem 0.8rem;
+  background: #eee;
+  border-radius: 50%;
   }
 
   .overlay {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(3px);
-    z-index: 1;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1;
   }
 
   .modal {
-    z-index: 2;
+  z-index: 2;
   }
 
   .hidden {
-    display: none;
+  display: none;
   }
 
   input[type="radio"]{
-    /* ...existing styles */
-    appearance: none;
+
+  appearance: none;
   background-color: #fff;
   margin: 0;
   font: inherit;
@@ -292,40 +292,40 @@ h2{
   border: 0.15em solid rgb(61, 61, 61);
   border-radius: 350px;
   transform: translateY(-0.075em);
-    display: grid;
-    place-content: center;
+  display: grid;
+  place-content: center;
   }
   
   #mediump::before {
-    content: "";
-    width: .65em;
-    height: .65em;
-    border-radius: 50%;
-    transform: scale(0);
-    transition: 150ms transform ease-in-out;
-    box-shadow: inset 1em 1em orange;
+  content: "";
+  width: .65em;
+  height: .65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 150ms transform ease-in-out;
+  box-shadow: inset 1em 1em orange;
   }
 
 
 
   #lowp::before {
-    content: "";
-    width: .65em;
-    height: .65em;
-    border-radius: 50%;
-    transform: scale(0);
-    transition: 150ms transform ease-in-out;
-    box-shadow: inset 1em 1em rgb(12, 219, 91);
+  content: "";
+  width: .65em;
+  height: .65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 150ms transform ease-in-out;
+  box-shadow: inset 1em 1em rgb(12, 219, 91);
   }
 
   #highp::before {
-    content: "";
-    width: .65em;
-    height: .65em;
-    border-radius: 50%;
-    transform: scale(0);
-    transition: 150ms transform ease-in-out;
-    box-shadow: inset 1em 1em rgb(255, 0, 0);
+  content: "";
+  width: .65em;
+  height: .65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 150ms transform ease-in-out;
+  box-shadow: inset 1em 1em rgb(255, 0, 0);
   }
   
   #mediump:checked::before,
@@ -335,14 +335,14 @@ h2{
   }
 
 #priority{
-    display: flex;
-    gap: 50px;
-    align-items: center;
+  display: flex;
+  gap: 50px;
+  align-items: center;
 }
 
 .radio-buttons{
-    display: flex;
-    gap: 25px;
+  display: flex;
+  gap: 25px;
 }
 
 #task-details{

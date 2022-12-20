@@ -1,11 +1,35 @@
 import { tasks } from "./tasks";
-import { renderTasks } from "./tasks";
 
+import { renderTasks } from "./createDom";
+
+export {closeModal}
+
+export {selectedProjectId}
+
+export {saveProjects}
 
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const openModalBtn = document.querySelector(".btn-open");
 const closeModalBtn = document.querySelector(".btn-close");
+const taskDetailsContainer = document.querySelector('.task-details');
+
+const projectsContainer = document.querySelector('[data-projects]');
+const navlistContainer = document.querySelector('.navlist');
+const newProjectForm = document.querySelector('[data-new-project-form]');
+const newProjectInput = document.querySelector('[data-new-project-input]');
+const deleteProjectBtn = document.querySelector('[data-delete-project-btn]');
+
+
+const taskTitleElement = document.querySelector('[data-task-title]');
+
+
+const LOCAL_STORAGE_PROJECT_KEY = 'task.projects';
+const LOCAL_STORAGE_SELECTED_PROJECT_ID_KEY ='task.selectedProjectId';
+
+let projects = JSON.parse(localStorage.getItem(LOCAL_STORAGE_PROJECT_KEY))||[];
+
+const selectedProjectId = localStorage.getItem(LOCAL_STORAGE_SELECTED_PROJECT_ID_KEY);
 
 const openModal = function () {
     modal.classList.remove("hidden");
@@ -17,30 +41,11 @@ openModalBtn.addEventListener("click", openModal);
 const closeModal = function () {
     modal.classList.add("hidden");
     overlay.classList.add("hidden");
-    const taskDetailsContainer = document.querySelector('.task-details');
     taskDetailsContainer.classList.add('hidden')
   };
 
 closeModalBtn.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
-
-
-
-const projectsContainer = document.querySelector('[data-projects]');
-const navlistContainer = document.querySelector('.navlist');
-const newProjectForm = document.querySelector('[data-new-project-form]');
-const newProjectInput = document.querySelector('[data-new-project-input]');
-const deleteProjectBtn = document.querySelector('[data-delete-project-btn]');
-
-
-const taskTitleElement = document.querySelector('[data-task-title]')
-
-const LOCAL_STORAGE_PROJECT_KEY = 'task.projects';
-const LOCAL_STORAGE_SELECTED_PROJECT_ID_KEY ='task.selectedProjectId';
-
-let projects = JSON.parse(localStorage.getItem(LOCAL_STORAGE_PROJECT_KEY))||[];
-
-let selectedProjectId = localStorage.getItem(LOCAL_STORAGE_SELECTED_PROJECT_ID_KEY)
 
 navlistContainer.addEventListener('click', e=>{
   if(e.target.tagName.toLowerCase()==='li'){
@@ -154,8 +159,4 @@ window.addEventListener('load', e=>{
 
 renderProjects()
 
-export {closeModal}
 
-export {selectedProjectId}
-
-export {saveProjects}
