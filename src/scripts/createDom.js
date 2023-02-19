@@ -7,13 +7,13 @@ export { renderTasks };
 const mainContainer = document.querySelector(".task-body");
 const checkbox = document.createElement("input");
 const taskDetails = document.createElement("span");
+const deletePic = document.createElement("img");
 
 function renderTasks(tasks) {
   mainContainer.innerHTML = "";
   tasks.forEach((task) => {
     const divContainer = document.createElement("div");
-    console.log(task.id);
-    createDomElements(task, divContainer);
+    createDomElements(task, divContainer, deletePic);
 
     taskDetails.addEventListener("click", showDetails);
     deletePic.addEventListener("click", deleteTask);
@@ -37,7 +37,7 @@ const checkUncheckState = function () {
   }
 };
 
-function createDomElements(task, divContainer) {
+function createDomElements(task, divContainer, deletePic) {
   const priority = task.priority;
 
   const checkbox = document.createElement("input");
